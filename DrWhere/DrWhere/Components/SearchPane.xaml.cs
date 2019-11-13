@@ -24,5 +24,11 @@ namespace DrWhere.Components
         {
             InitializeComponent();
         }
+
+        private void Search_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+        }
     }
 }

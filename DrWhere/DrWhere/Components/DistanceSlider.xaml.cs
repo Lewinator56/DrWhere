@@ -31,8 +31,13 @@ namespace DrWhere.Components
 
         private void DistanceSliderPart_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            float maxDistanceKm = 30;
+            float maxDistanceMi = maxDistanceKm / 1.609f;
+
             this.distanceSelected = this.DistanceSliderPart.Value;
             this.DistanceLabel.Content = this.distanceSelected.ToString() + (distanceType ? " Km" : " Mi");
         }
+
+        
     }
 }
