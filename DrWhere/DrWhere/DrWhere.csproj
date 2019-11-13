@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\ResultsPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\SearchPane.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="Components\DistanceSlider.xaml.cs">
       <DependentUpon>DistanceSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ResultsPane.xaml.cs">
+      <DependentUpon>ResultsPane.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\SearchPane.xaml.cs">
       <DependentUpon>SearchPane.xaml</DependentUpon>

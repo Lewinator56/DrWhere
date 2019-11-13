@@ -17,11 +17,11 @@
         </Grid.RowDefinitions>
         <Label Content="Max Distance" Grid.Column="0" Grid.Row="0" FontSize="16" Margin="-10"/>
         <DockPanel FlowDirection="LeftToRight" Grid.Column="1" Grid.Row="0">
-            <ToggleButton Name="MeasurementSelector"/>
+            <CheckBox Name="MeasurementSelector" Click="MeasurementSelector_Click"/>
             <Label Content="Mi/Km"/>
         </DockPanel>
         
-        <Slider Name="DistanceSliderPart" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" ValueChanged="DistanceSliderPart_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="0.25" Margin="-5, 0, 0, 0"/>
+        <Slider Name="DistanceSliderPart" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" ValueChanged="DistanceSliderPart_ValueChanged"  Margin="-5, 0, 0, 0"/>
         <Label Name ="DistanceLabel" Content="{Binding DistanceSelected}" FontSize="16" Grid.Column="1" Grid.Row="1" Width="75" HorizontalContentAlignment="Right"/>
         
     </Grid>

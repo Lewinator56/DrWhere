@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:DrWhere"
         xmlns:Components ="clr-namespace:DrWhere.Components"
         mc:Ignorable="d"
-        Title="Dr Where" Height="450" Width="800">
+        Title="Dr Where" Height="450" Width="800" MinWidth="900" MinHeight="575">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -16,5 +16,6 @@
         <Components:SearchPane Grid.Column="0" Padding="20">
             
         </Components:SearchPane>
+        <Components:ResultsPane Grid.Column="1" Padding="20"/>
     </Grid>
 </Window>
