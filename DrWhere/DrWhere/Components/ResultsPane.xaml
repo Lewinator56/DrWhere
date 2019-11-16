@@ -8,6 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <materialDesign:Card Background="White" materialDesign:ShadowAssist.ShadowDepth="Depth2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" UniformCornerRadius="10">
-
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <Label Content="Showing Results for" FontSize="18"/>
+            <DataGrid Name="ResultsGrid" ItemsSource="{Binding SearchResults}" AutoGenerateColumns="True" VerticalAlignment="Stretch" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                
+            </DataGrid>
+        </StackPanel>
     </materialDesign:Card>
 </UserControl>

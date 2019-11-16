@@ -28,8 +28,6 @@ namespace DrWhere.Components
             setDistance();
         }
 
-        public float distanceSelected { get; set; }
-        public Boolean distanceType { get; set; }
 
         private void DistanceSliderPart_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -44,17 +42,18 @@ namespace DrWhere.Components
 
         private void setDistance()
         {
-            float maxDistanceMi = 30;
-            distanceSelected = (maxDistanceMi / 10) * (float)DistanceSliderPart.Value;
+            float maxDistanceMi = GlobalVar.maxDistanceMiles;
+            GlobalVar.distanceSelected = (maxDistanceMi / 10) * (float)DistanceSliderPart.Value;
             if (!MeasurementSelector.IsChecked.Value)
             {
-                distanceSelected *= 1.609f;
+                GlobalVar.distanceSelected *= 1.609f;
             }
             else
             {
-                distanceSelected = distanceSelected;
+                GlobalVar.distanceSelected = GlobalVar.distanceSelected;
             }
-            this.DistanceLabel.Content = this.distanceSelected.ToString("N1") + (!MeasurementSelector.IsChecked.Value ? " Km" : " Mi");
+            GlobalVar.distanceInMiles = MeasurementSelector.IsChecked.Value;
+            this.DistanceLabel.Content = GlobalVar.distanceSelected.ToString("N1") + (!MeasurementSelector.IsChecked.Value ? " Km" : " Mi");
         }
     }
 }

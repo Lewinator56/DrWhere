@@ -20,9 +20,36 @@ namespace DrWhere.Components
     /// </summary>
     public partial class ResultsPane : UserControl
     {
+        List<ServicesData> searchResults;
         public ResultsPane()
         {
             InitializeComponent();
+            this.DataContext = this;
+
+            searchResults = new List<ServicesData>();
+            searchResults.Add(new ServicesData()
+            {
+                Postcode = "LL57 4LS",
+                Type = "GP",
+                Name = "The Doctors Surgery",
+                Address = "32 Steep Hill",
+                Telephone = "07756 554324",
+                Private = true,
+
+            });
+            ResultsGrid.ItemsSource = searchResults;
         }
+
+    }
+
+    public class ServicesData
+    {
+        public string Postcode { get; set; }
+        public string Type { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Telephone { get; set; }
+        public bool Private { get; set; }
+
     }
 }
