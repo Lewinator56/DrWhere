@@ -15,18 +15,18 @@
             <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="5" Margin="0, 10, 0, 10" Height="auto">
                 <StackPanel Margin="10">
                     <Label Content="Filter Results" FontSize="16"/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 5, 0, 0" FilterText="GPs"/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Dentists"/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Opticians"/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Shcools"/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 10" FilterText="Nursuries"/>
+                    <local:CheckBoxLabel x:Name="GPSelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 5, 0, 0" FilterText="GPs" returnText="GP"/>
+                    <local:CheckBoxLabel x:Name="DentistSelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Dentists" returnText="Dentist"/>
+                    <local:CheckBoxLabel x:Name="OpticianSelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Opticians" returnText="Optician"/>
+                    <local:CheckBoxLabel x:Name="SchoolSelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 0" FilterText="Shcools" returnText="School"/>
+                    <local:CheckBoxLabel x:Name="NurserySelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 0, 0, 10" FilterText="Nurseries" returnText="Nursery"/>
                     <Separator/>
-                    <local:CheckBoxLabel HorizontalAlignment="Stretch" Height="auto" Margin="5, 10, 0, 10" FilterText="Include Private Services"/>
+                    <local:CheckBoxLabel x:Name="PrivateSelect" HorizontalAlignment="Stretch" Height="auto" Margin="5, 10, 0, 10" FilterText="Include Private Services"/>
                     <Separator/>
                     <local:DistanceSlider HorizontalAlignment="Stretch" Height="auto" Margin="5, 10, 0, 10"/>
                 </StackPanel>
             </Border>
-            <Button Name="Search_Btn" Content="Search" HorizontalAlignment="Right" Height="40" Background="White" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="1" BorderBrush="LightGray" Foreground="#FF2196F3" materialDesign:ButtonAssist.CornerRadius="5" Style="{DynamicResource MaterialDesignFlatButton}"/>
+            <Button Name="Search_Btn" Content="Search" HorizontalAlignment="Right" Height="40" Background="White" materialDesign:ShadowAssist.ShadowDepth="Depth0" BorderThickness="1" BorderBrush="LightGray" Foreground="#FF2196F3" materialDesign:ButtonAssist.CornerRadius="5" Style="{DynamicResource MaterialDesignFlatButton}" Click="Search_Btn_Click"/>
 
         </StackPanel>
     </materialDesign:Card> 

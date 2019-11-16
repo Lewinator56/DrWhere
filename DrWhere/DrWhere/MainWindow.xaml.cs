@@ -23,6 +23,7 @@ namespace DrWhere
         public MainWindow()
         {
             InitializeComponent();
+            // this is for testing
             GlobalVar.maxDistanceMiles = 10f;
         }
     }

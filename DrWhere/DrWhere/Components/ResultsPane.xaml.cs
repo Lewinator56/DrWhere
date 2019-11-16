@@ -26,30 +26,11 @@ namespace DrWhere.Components
             InitializeComponent();
             this.DataContext = this;
 
-            searchResults = new List<ServicesData>();
-            searchResults.Add(new ServicesData()
-            {
-                Postcode = "LL57 4LS",
-                Type = "GP",
-                Name = "The Doctors Surgery",
-                Address = "32 Steep Hill",
-                Telephone = "07756 554324",
-                Private = true,
-
-            });
-            ResultsGrid.ItemsSource = searchResults;
+            // basically all this does, on initialisation, sets the item source for the datagrid, we shouldn't need to touch this as WPF should handle updates for us
+            ResultsGrid.ItemsSource = GlobalVar.ServicesList;
         }
 
-    }
-
-    public class ServicesData
-    {
-        public string Postcode { get; set; }
-        public string Type { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Telephone { get; set; }
-        public bool Private { get; set; }
 
     }
+
 }

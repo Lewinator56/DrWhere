@@ -18,6 +18,8 @@ namespace DrWhere.Components
     /// <summary>
     /// Interaction logic for SearchPane.xaml
     /// </summary>
+    /// 
+    // TODO add verification logic to postcode input, waiting for backend build
     public partial class SearchPane : UserControl
     {
         public SearchPane()
@@ -27,7 +29,17 @@ namespace DrWhere.Components
 
         private void Search_Btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            //first, lets get the current selected filters
+
+            // Main filters
+            GlobalVar.selectedTypes = new List<string> { GPSelect.getCheckedString(), DentistSelect.getCheckedString(), OpticianSelect.getCheckedString(), SchoolSelect.getCheckedString(), NurserySelect.getCheckedString() };
+            // Private filter
+            GlobalVar.showPrivate = PrivateSelect.getChecked();
+
+            // Now call the display routines
+
+            // just some debugging
+            MessageBox.Show("Selected: \n" + String.Join(Environment.NewLine,GlobalVar.selectedTypes.ToArray()) + "\n" + GlobalVar.showPrivate.ToString() + "\n" + "Distance: \n" + GlobalVar.distanceSelected + "\n" + "in Miles: " + GlobalVar.distanceInMiles.ToString());
             
         }
     }

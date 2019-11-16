@@ -42,6 +42,7 @@ namespace DrWhere.Components
 
         private void setDistance()
         {
+            // sets the seleced distance, and if its in Km or Miles, stored as 2 variables in GlobalVar, check BOTH when looking at the distance
             float maxDistanceMi = GlobalVar.maxDistanceMiles;
             GlobalVar.distanceSelected = (maxDistanceMi / 10) * (float)DistanceSliderPart.Value;
             if (!MeasurementSelector.IsChecked.Value)
