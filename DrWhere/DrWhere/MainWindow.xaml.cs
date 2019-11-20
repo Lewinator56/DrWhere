@@ -1,28 +1,25 @@
-﻿using System;
+﻿using System.Windows;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using DrWhere.Components;
 
-namespace DrWhere
-{
+namespace DrWhere {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
+    //public ObservableCollection<ServiceModel> GridList = new ObservableCollection<ServiceModel>;
+    public partial class MainWindow : Window {
+        public MainWindow() {
             InitializeComponent();
+
+            // Set max distance
+            GlobalVar.maxDistanceMiles = 5f;
+
+            // Initialize http client
+            PostcodeApiClient.InitializeClient();
+        }
+
+        private void ResultsPane_Loaded(object sender, RoutedEventArgs e) {
+
         }
     }
 }
