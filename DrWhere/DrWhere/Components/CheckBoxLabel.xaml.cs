@@ -25,6 +25,23 @@ namespace DrWhere.Components
             InitializeComponent();
             this.DataContext = this;
         }
+        //check to see if this is selected
+        public bool getChecked()
+        {
+            return this.checkBox.IsChecked.Value;
+        }
+        
+        //returns the returnText IF the box is checked
+        public string getCheckedString()
+        {
+            if (getChecked())
+            {
+                return this.returnText;
+            }
+            else return null;
+        }
         public string FilterText { get; set; }
+        public string returnText { get; set; }
     }
+
 }

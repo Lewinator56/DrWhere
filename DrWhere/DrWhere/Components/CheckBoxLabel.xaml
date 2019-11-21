@@ -12,7 +12,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox Name="checkBox" Grid.Column="0">
+        <CheckBox Name="checkBox" Grid.Column="0" IsChecked="True">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="1.25" ScaleY="1.25"/>
             </CheckBox.LayoutTransform>

@@ -24,15 +24,37 @@ namespace DrWhere.Components
         {
             InitializeComponent();
             this.DataContext = this;
+            MeasurementSelector.IsChecked = true;
+            setDistance();
         }
 
-        public double distanceSelected { get; set; }
-        public Boolean distanceType { get; set; }
 
         private void DistanceSliderPart_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            this.distanceSelected = this.DistanceSliderPart.Value;
-            this.DistanceLabel.Content = this.distanceSelected.ToString() + (distanceType ? " Km" : " Mi");
+
+            setDistance();
+        }
+
+        private void MeasurementSelector_Click(object sender, RoutedEventArgs e)
+        {
+            setDistance();
+        }
+
+        private void setDistance()
+        {
+            // sets the seleced distance, and if its in Km or Miles, stored as 2 variables in GlobalVar, check BOTH when looking at the distance
+            float maxDistanceMi = GlobalVar.maxDistanceMiles;
+            GlobalVar.distanceSelected = (maxDistanceMi / 10) * (float)DistanceSliderPart.Value;
+            if (!MeasurementSelector.IsChecked.Value)
+            {
+                GlobalVar.distanceSelected *= 1.609f;
+            }
+            else
+            {
+                GlobalVar.distanceSelected = GlobalVar.distanceSelected;
+            }
+            GlobalVar.distanceInMiles = MeasurementSelector.IsChecked.Value;
+            this.DistanceLabel.Content = GlobalVar.distanceSelected.ToString("N1") + (!MeasurementSelector.IsChecked.Value ? " Km" : " Mi");
         }
     }
 }
